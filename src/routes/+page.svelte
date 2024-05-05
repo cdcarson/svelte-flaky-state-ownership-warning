@@ -11,9 +11,13 @@
   let modalShown = $state(false);
   let omitLuckyNumbers = $state(false);
 </script>
-
+<svelte:head>
+  <title>
+    Flaky State Ownership Warning
+  </title>
+</svelte:head>
 <main class="prose mx-auto mb-96 mt-16 max-w-none px-4 lg:container">
-  <h1 class="border-b pb-4">Flaky State Warnings</h1>
+  <h1 class="border-b pb-4">Flaky State Ownership Warning</h1>
   <div class="max-w-prose">
     <p>
       An irrelevant (as far as the state in question goes) modal wrapper results
@@ -25,6 +29,9 @@
       is owned by .../src/routes/EditForm.svelte. Consider creating a binding
       between .../src/routes/EditForm.svelte and .../src/lib/PretendModal.svelte
     </blockquote>
+    <p>
+      Open the console to see warnings.
+    </p>
   </div>
   
 
@@ -41,7 +48,6 @@
           </small>
         </div>
       </label>
-      <div class="mb-2">Open dev console to see warnings.</div>
       <div class="mb-2">
         <button onclick={() => (modalShown = !modalShown)}
           >Toggle Modal Form</button
